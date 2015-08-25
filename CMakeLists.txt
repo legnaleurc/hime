@@ -17,11 +17,18 @@ option(ENABLE_TSIN "enable Tsin input method [default: enable]" TRUE)
 
 # NOTE OS detection is done by CMake
 
+# setup environments
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+include(GNUInstallDirs)
+find_package(PkgConfig REQUIRED)
 
 # Detect features
-include("detect_gtk2")
-include("detect_gtk3")
-include("detect_qt3")
-include("detect_qt4")
-include("detect_qt5")
+find_package(Gtk2IMModule)
+find_package(Gtk3IMModule)
+find_package(Qt3IMModule)
+find_package(Qt4IMModule)
+find_package(Qt5IMModule)
+find_package(Anthy)
+find_package(Appindicator)
+find_package(Chewing)
+find_package(Lib64)
