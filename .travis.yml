@@ -1,0 +1,12 @@
+language: c
+
+compiler: gcc
+
+before_install:
+    -   sudo apt-add-repository --yes ppa:ubuntu-sdk-team/ppa
+    -   sudo apt-get update -qq
+    -   sudo apt-get install -y cmake libanthy-dev libappindicator-dev libchewing3-dev libgtk2.0-dev libgtk-3-dev libqt4-dev libxtst-dev qtbase5-private-dev qtchooser
+
+script:
+    -   cmake .
+    -   make

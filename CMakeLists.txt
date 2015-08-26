@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 2.8.9)
 
-project(hime VERSION 0.9.10)
+project(hime)
+set(PROJECT_VERSION 0.9.10)
 
 # Optional Packages
 option(WITH_GTK "which gtk+ version to compile against [default: 2.0]" "2.0")
