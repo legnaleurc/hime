@@ -11,4 +11,3 @@ if (NOT QT4_FOUND)
     message(WARNING "Cannot find Qt4 library, set ENABLE_QT4_IM_MODULE to FALSE")
     set(ENABLE_QT4_IM_MODULE FALSE)
 endif()
-
