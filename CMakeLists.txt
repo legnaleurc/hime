@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(hime)
+project(hime VERSION 0.9.10)
 
 # Optional Packages
 option(WITH_GTK "which gtk+ version to compile against [default: 2.0]" "2.0")
@@ -32,3 +32,14 @@ find_package(Anthy)
 find_package(Appindicator)
 find_package(Chewing)
 find_package(Lib64)
+
+add_definitions(-DHIME_VERSION="${PROJECT_VERSION}")
+# FIXME: Set properly values here.
+add_definitions(-DHIME_BIN_DIR="")
+add_definitions(-DHIME_DEFAULT_ICON_DIR="")
+add_definitions(-DHIME_OGG_DIR="")
+add_definitions(-DHIME_SCRIPT_DIR="")
+add_definitions(-DHIME_TABLE_DIR="")
+add_definitions(-DSYS_ICON_DIR="")
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/src)
