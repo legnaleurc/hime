@@ -34,13 +34,15 @@ find_package(Appindicator)
 find_package(Chewing)
 find_package(Lib64)
 
+include(GNUInstallDirs)
+
 add_definitions(-DHIME_VERSION="${PROJECT_VERSION}")
 # FIXME: Set properly values here.
-add_definitions(-DHIME_BIN_DIR="")
-add_definitions(-DHIME_DEFAULT_ICON_DIR="")
-add_definitions(-DHIME_OGG_DIR="")
-add_definitions(-DHIME_SCRIPT_DIR="")
-add_definitions(-DHIME_TABLE_DIR="")
-add_definitions(-DSYS_ICON_DIR="")
+add_definitions(-DHIME_BIN_DIR="${CMAKE_INSTALL_FULL_BINDIR}")
+add_definitions(-DHIME_DEFAULT_ICON_DIR="${CMAKE_INSTALL_FULL_DATADIR}/pixmaps/hime")
+add_definitions(-DHIME_OGG_DIR="${CMAKE_INSTALL_FULL_DATADIR}/hime/ogg")
+add_definitions(-DHIME_SCRIPT_DIR="${CMAKE_INSTALL_FULL_DATADIR}/hime/script")
+add_definitions(-DHIME_TABLE_DIR="${CMAKE_INSTALL_FULL_DATADIR}/hime/table")
+add_definitions(-DSYS_ICON_DIR="${CMAKE_INSTALL_FULL_DATADIR}/pixmaps")
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
